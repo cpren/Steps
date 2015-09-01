@@ -1,1 +1,81 @@
-<xml xmlns="http://www.w3.org/1999/xhtml"></xml>
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="16" inline="true" x="28" y="27">
+    <field name="VAR">count</field>
+    <value name="VALUE">
+      <block type="math_number" id="23">
+        <field name="NUM">5</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_whileUntil" id="14" inline="false">
+        <field name="MODE">WHILE</field>
+        <value name="NUMBER">
+          <block type="logic_compare" id="30" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="variables_get" id="34">
+                <field name="VAR">count</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="41">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="controls_if" id="7" inline="false">
+            <value name="IF0">
+              <block type="sensor_button" id="48">
+                <field name="OBJECT">UP</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="variables_set" id="61" inline="true">
+                <field name="VAR">count</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="68" inline="true">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="variables_get" id="78">
+                        <field name="VAR">count</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="85">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="robot_delay" id="50" inline="true">
+                    <value name="DELAY">
+                      <block type="math_number" id="57">
+                        <field name="NUM">400</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_cleardisplay" id="94">
+                        <next>
+                          <block type="oled_drawnumber" id="103" inline="true">
+                            <value name="NUMBER">
+                              <block type="variables_get" id="107">
+                                <field name="VAR">count</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
