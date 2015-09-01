@@ -3,7 +3,7 @@
     <field name="VAR">count</field>
     <value name="VALUE">
       <block type="math_number" id="23">
-        <field name="NUM">5</field>
+        <field name="NUM">0</field>
       </block>
     </value>
     <next>
